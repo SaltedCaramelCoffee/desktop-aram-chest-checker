@@ -34,7 +34,7 @@ npm run dev
 npm run build-mac
 ```
 
-#### Windows.
+#### Windows
 ```sh
 npm run build-win
 ```
