@@ -16,7 +16,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron": "electron .",
-    "build-mac": "electron-packager . 'aram-chest-checker' --platform='darwin' --arch='x64'  --overwrite --ignore='public' --ignore='.gitignore' --ignore='Procfile' --ignore='yarn.lock'"
+    "build-mac": "electron-packager . 'aram-chest-checker' --platform='darwin' --arch='x64'  --overwrite --ignore='public' --ignore='.gitignore' --ignore='Procfile' --ignore='yarn.lock' --ignore='.git'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,12 +34,13 @@
     ]
   },
   "devDependencies": {
-    "react": "^16.10.0",
-    "react-dom": "^16.10.0",
-    "react-scripts": "3.1.2",
     "cz-conventional-changelog": "3.0.2",
     "electron": "^6.0.10",
-    "foreman": "^3.0.1"
+    "electron-packager": "^14.0.6",
+    "foreman": "^3.0.1",
+    "react": "^16.10.0",
+    "react-dom": "^16.10.0",
+    "react-scripts": "3.1.2"
   },
   "config": {
     "commitizen": {
