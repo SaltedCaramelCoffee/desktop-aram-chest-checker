@@ -6,9 +6,6 @@
   "homepage": "./",
   "dependencies": {
     "lcu-connector": "^2.1.2",
-    "react": "^16.10.0",
-    "react-dom": "^16.10.0",
-    "react-scripts": "3.1.2",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7"
   },
@@ -18,7 +15,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron": "electron ."
+    "electron": "electron .",
+    "build-mac": "electron-packager . aram-chest-checker --platform='darwin' --arch='x64'  --overwrite --ignore='public' --ignore='.gitignore' --ignore='Procfile' --ignore='yarn.lock' --ignore='.git' --ignore='package-lock.json'",
+    "build-win": "electron-packager . aram-chest-checker --platform='win32' --arch='x64'  --overwrite --ignore='public' --ignore='.gitignore' --ignore='Procfile' --ignore='yarn.lock' --ignore='.git' --ignore='package-lock.json'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,7 +37,11 @@
   "devDependencies": {
     "cz-conventional-changelog": "3.0.2",
     "electron": "^6.0.10",
-    "foreman": "^3.0.1"
+    "electron-packager": "^14.0.6",
+    "foreman": "^3.0.1",
+    "react": "^16.10.0",
+    "react-dom": "^16.10.0",
+    "react-scripts": "3.1.2"
   },
   "config": {
     "commitizen": {
