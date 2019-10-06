@@ -1,13 +1,16 @@
 {
   "name": "desktop-aram-chest-checker",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "main": "./src/electron-starter.js",
   "homepage": "./",
   "dependencies": {
+    "lcu-connector": "^2.1.2",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
-    "react-scripts": "3.1.2"
+    "react-scripts": "3.1.2",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7"
   },
   "scripts": {
     "dev": "nf start -p 3001",
@@ -33,7 +36,13 @@
     ]
   },
   "devDependencies": {
+    "cz-conventional-changelog": "3.0.2",
     "electron": "^6.0.10",
     "foreman": "^3.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
