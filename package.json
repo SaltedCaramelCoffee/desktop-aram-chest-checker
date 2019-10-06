@@ -16,7 +16,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron": "electron .",
-    "build-mac": "electron-packager . 'aram-chest-checker' --platform='darwin' --arch='x64'  --overwrite --ignore='public' --ignore='.gitignore' --ignore='Procfile' --ignore='yarn.lock' --ignore='.git'"
+    "build-mac": "electron-packager . aram-chest-checker --platform='darwin' --arch='x64'  --overwrite --ignore='public' --ignore='.gitignore' --ignore='Procfile' --ignore='yarn.lock' --ignore='.git' --ignore='package-lock.json'",
+    "build-win": "electron-packager . aram-chest-checker --platform='win32' --arch='x64'  --overwrite --ignore='public' --ignore='.gitignore' --ignore='Procfile' --ignore='yarn.lock' --ignore='.git' --ignore='package-lock.json'"
   },
   "eslintConfig": {
     "extends": "react-app"
