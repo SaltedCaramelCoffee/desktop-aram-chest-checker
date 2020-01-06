@@ -2,9 +2,25 @@
 	font-size: 48px;
 }
 
-.chest-status {
+.row {
 	padding-top: 20px;
 	font-size: 24px;
+}
+
+.chest-status {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.toggle {
+	.bx--form-item {
+		padding-right: 13px;
+		align-items: flex-end;
+	}
+}
+
+.align-right {
+	float: right;
 }
 
 .filter {
