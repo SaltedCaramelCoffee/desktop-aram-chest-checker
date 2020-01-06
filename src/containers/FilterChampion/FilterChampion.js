@@ -2,6 +2,7 @@ import React from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import ChampionTable from "../../components/ChampionTable/ChampionTable";
 import Button from "../../components/Button/Button";
+import Toggle from "../../components/Toggle/Toggle";
 import Default from "../Default/Default";
 
 import "./_filter-champion.scss";
@@ -176,11 +177,16 @@ class FilterChampion extends React.Component {
         this.refresh();
     };
 
+    onToggleChange = () => {
+        this.setState({filterOn: !this.state.filterOn})
+    }
+
     onFormSubmit = () => {};
 
     constructor(props) {
         super(props);
         this.state = {
+            filterOn: true,
             screen: "Loading",
             term: "",
             version: "",
@@ -201,15 +207,26 @@ class FilterChampion extends React.Component {
 
         if (this.state.screen === "Success") {
             return (
-                <div className="shell">
-                    <div className="summoner">
+                <div className="shell bx--grid">
+                    <div className="bx--row">
+                    <div className="bx--col summoner">
                         {this.state.currentSummoner.displayName}
                     </div>
-                    <div className="chest-status">
-                        Available number of chests:{" "}
-                        {this.state.availableChests.earnableChests}
+                    <div className="bx--col">
+                      <div className="align-right">
+                      <Button text="Refresh" onButtonClick={this.onButtonClick} />
+                      </div>
                     </div>
-                    <Button text="Refresh" onButtonClick={this.onButtonClick} />
+                    </div>
+                    <div className="bx--row row">
+                        <div className="bx--col chest-status">
+                          Available number of chests:{" "}
+                          {this.state.availableChests.earnableChests}
+                        </div>
+                        <div className="bx--col toggle">
+                        <Toggle onChange={this.onToggleChange}/>
+                        </div>
+                    </div>
                     <div className="filter">
                     <SearchBar
                         label=""
@@ -222,6 +239,7 @@ class FilterChampion extends React.Component {
                     <ChampionTable
                         className="table"
                         term={this.state.term.replace(/\W/g, "").toLowerCase()}
+                        filterOn={this.state.filterOn}
                         version={this.state.version}
                         championNameToId={this.state.championNameToId}
                         championsById={this.state.championsById}

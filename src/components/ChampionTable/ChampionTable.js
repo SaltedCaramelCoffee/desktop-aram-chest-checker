@@ -18,13 +18,20 @@ class ChampionTable extends React.Component {
         return true
     }
 
-    createChampionTable = term => {
+    createChampionTable = (term, filterOn) => {
         let table = [];
         Object.keys(this.props.championNameToId)
             .filter(key => this.hasCharacterInOrder(key, term))
             .forEach(champion => {
                 const championId = this.props.championNameToId[champion];
                 const championInfo = this.props.championsById[championId];
+
+                if (filterOn) {
+                  if (championInfo['chestGranted'] || !championInfo.owned) {
+                    return;
+                  }
+                }
+
                 const imgSource = `http://ddragon.leagueoflegends.com/cdn/${this.props.version}/img/champion/${championInfo['img']}`;
 
                 let cssClass
@@ -58,7 +65,7 @@ class ChampionTable extends React.Component {
     render() {
         return (
             <div className="table">
-            {this.createChampionTable(this.props.term)}
+            {this.createChampionTable(this.props.term, this.props.filterOn)}
             </div>
         );
     }
