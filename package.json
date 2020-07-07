@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "cz-conventional-changelog": "3.0.2",
-    "electron": "^6.0.10",
+    "electron": "^7.2.4",
     "electron-packager": "^14.0.6",
     "foreman": "^3.0.1",
     "react": "^16.10.0",
